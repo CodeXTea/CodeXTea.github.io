@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SMK RANTAU PANJANG</title>
+        <style>
+            body {
+                background: url("background.jpg") no-repeat center center fixed;
+                background-size: cover;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 20px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+                overflow-x: auto;
+            }
+
+            header {
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                border-radius: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                white-space: nowrap;
+                overflow-x: auto;
+            }
+
+            nav ul li {
+                display: inline;
+                margin-right: 20px;
+            }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #555;
+                font-weight: bold;
+                font-size: 18px;
+                padding: 10px 20px;
+                border: 2px solid #555;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+                display: inline-block;
+                text-transform: uppercase;
+                animation: changeColor 5s infinite;
+            }
+
+            nav ul li a:hover {
+                background-color: #555;
+                color: #fff;
+                animation: none; /* Menonaktifkan animasi saat hover */
+            }
+
+            @keyframes changeColor {
+                0% {
+                    background-color: #ff0000;
+                }
+                20% {
+                    background-color: #ff7f00;
+                }
+                40% {
+                    background-color: #ffff00;
+                }
+                60% {
+                    background-color: #00ff00;
+                }
+                80% {
+                    background-color: #0000ff;
+                }
+                100% {
+                    background-color: #8a2be2;
+                }
+            }
+
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .gallery img {
+                width: 300px;
+                height: 200px;
+                margin: 10px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
+            }
+
+            .gallery img:hover {
+                transform: scale(1.05);
+            }
+
+            .social-icons {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .social-icons a {
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            .social-icons img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                transition: transform 0.3s ease;
+                border: 2px solid #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .social-icons img:hover {
+                transform: scale(1.2);
+            }
+
+            h2 {
+                color: #555;
+                text-align: center;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: #666;
+                line-height: 1.6;
+            }
+
+            .video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%;
+                overflow: hidden;
+                margin-top: 20px;
+                border-radius: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Selamat Datang di SMK RANTAU PANJANG</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#" onclick="showBeranda()">Beranda</a></li>
+                        <li>
+                            <a href="#" onclick="showTentang()">Tentang Kami</a>
+                        </li>
+                        <li><a href="#" onclick="showProgram()">Program</a></li>
+                        <li><a href="#" onclick="showKontak()">Kontak</a></li>
+                        <li>
+                            <a href="#" onclick="showAktivitas()">Aktivitas</a>
+                        </li>
+                        <li><a href="#" onclick="showYouTube()">YouTube</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section id="beranda" style="display: none">
+                <h2>Selamat datang di SMK RANTAU PANJANG</h2>
+                <p>
+                    SMK RANTAU PANJANG adalah tempat untuk meraih impianmu.
+                    Bergabunglah dengan kami untuk mendapatkan pengalaman
+                    pendidikan yang tak terlupakan.
+                </p>
+            </section>
+
+            <section id="tentang-kami" style="display: none">
+                <h2>Tentang Kami</h2>
+                <p>Ini adalah informasi tentang SMK RANTAU PANJANG.</p>
+            </section>
+
+            <section id="program" style="display: none">
+                <h2>Program</h2>
+                <p>
+                    Ini adalah program yang ditawarkan oleh SMK RANTAU PANJANG.
+                </p>
+            </section>
+
+            <section id="kontak" style="display: none">
+                <h2>Kontak</h2>
+                <p>Silakan hubungi kami melalui informasi kontak berikut.</p>
+                <div class="social-icons">
+                    <a
+                        href="https://www.instagram.com/serantau_official?igsh=aWRoNWVkOTUwOWY5"
+                        ><img src="instagram.png" alt="Instagram"
+                    /></a>
+                    <a
+                        href="https://www.tiktok.com/@serantauhebat?_t=8m7hvbeH7Bo&_r=1z"
+                        ><img src="tiktok.png" alt="TikTok"
+                    /></a>
+                    <a
+                        href="https://youtube.com/@smkrantaupanjangkpm-sk-adm1837?si=y9DchEHIb3cTNsZE"
+                        ><img src="youtube.png" alt="YouTube"
+                    /></a>
+                </div>
+            </section>
+
+            <section id="aktivitas" style="display: none">
+                <h2>Galeri Aktivitas</h2>
+                <div class="gallery">
+                    <img src="aktivitas1.jpg" alt="Aktivitas 1" />
+                    <img src="aktivitas2.jpg" alt="Aktivitas 2" />
+                    <img src="aktivitas3.jpg" alt="Aktivitas 3" />
+                    <!-- Tambahkan gambar aktivitas lainnya sesuai kebutuhan -->
+                </div>
+            </section>
+
+            <section id="youtube" style="display: none">
+                <div class="video-container">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://m.youtube.com/watch?si=ZOkhWW9AePclVd-4&v=3FzxoDA0IxE&feature=youtu.be"
+                        frameborder="0"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            function showBeranda() {
+                hideAllSections();
+                document.getElementById("beranda").style.display = "block";
+            }
+
+            function showTentang() {
+                hideAllSections();
+                document.getElementById("tentang-kami").style.display = "block";
+            }
+
+            function showProgram() {
+                hideAllSections();
+                document.getElementById("program").style.display = "block";
+            }
+
+            function showKontak() {
+                hideAllSections();
+                document.getElementById("kontak").style.display = "block";
+            }
+
+            function showAktivitas() {
+                hideAllSections();
+                document.getElementById("aktivitas").style.display = "block";
+            }
+
+            function showYouTube() {
+                hideAllSections();
+                document.getElementById("youtube").style.display = "block";
+            }
+
+            function hideAllSections() {
+                var sections = document.querySelectorAll("section");
+                sections.forEach(function (section) {
+                    section.style.display = "none";
+                });
+            }
+        </script>
+    </body>
+</html>
